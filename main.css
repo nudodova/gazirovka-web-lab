@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: black;
+    background-image: linear-gradient(to right bottom, red, orange, yellow, green, blue, darkblue, purple);
     color: lightgreen;
     padding: 10px;
     font-size: 14pt;
@@ -14,7 +14,7 @@ header {
 }
 
 footer {
-    background-color: black;
+    background-image: linear-gradient(to right bottom, red, orange, yellow, green, blue, darkblue, purple);
     color: lightgreen;
     padding: 10px;
     font-size: 12pt;
