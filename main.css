@@ -13,12 +13,22 @@ header {
 
 }
 
+header:hover {
+    font-size: 21pt;
+    color:darkgreen;
+}
+
 footer {
     background-image: linear-gradient(to right bottom, red, orange, yellow, green, blue, darkblue, purple);
     color: lightgreen;
     padding: 10px;
     font-size: 12pt;
     text-align: right;
+}
+
+footer:hover {
+    font-size: 23px;
+    color: darkgreen;
 }
 
 h1 {
