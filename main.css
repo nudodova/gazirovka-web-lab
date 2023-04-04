@@ -7,7 +7,7 @@ body {
 
 header {
     background-image: linear-gradient(to right bottom, red, orange, yellow, green, blue, darkblue, purple);
-    color: lightgreen;
+    color: darkgreen;
     padding: 10px;
     font-size: 14pt;
 
@@ -21,6 +21,25 @@ footer {
     text-align: right;
 }
 
+h1 {
+    text-align: center; 
+    font-style: italic;
+}
+
+li {
+    color: darkgreen; 
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none; 
+    color: darkgreen; 
+    font-size: 20px;
+    transition-duration:1s, 1s, 1s ;
+    transition-property: background-color, color, text-shadow;
+    
+}
+
 a:visited {
     background-color: red;
     color: black;
@@ -32,6 +51,8 @@ a:hover {
     text-decoration: underline;
     background-color: white;
     font-weight: bold;
+    text-shadow: 6px 6px 2px grey;
+    transition-duration: 0.3s;
 }
 
 a:active {
