@@ -23,7 +23,7 @@
         .second {
             left: 380px;
             top: 120px;
-            position: fixed;
+            position: absolute;
         }
 
         .second:hover {
@@ -54,8 +54,42 @@
             margin-left: 320px;
         }
 
+        .text {
+            width: 100px;
+            height: 30px;
+            border-radius: 20px 20px 20px 5px;
+            top: -310px;
+            right: -560px;
+            z-index: 3;
+            box-shadow: 3px 3px 3px;
+        }
+
+        
+
+        .medium {
+            width: 20px;
+            height: 20px;
+            border-radius: 30px 5px 30px 10px;
+            top: -380px;
+            right: -527px;
+            z-index: 1;
+            box-shadow: 3px 3px 3px;
+        }
+
+        .min {
+            width: 20px;
+            height: 20px;
+            border-radius: 20px 10px 20px 10px;
+            top: -345px;
+            right: -545px;
+            z-index: 2;
+            box-shadow: 3px 3px 3px;
+        }
         .podval {
-            overflow: fixed;
+            bottom: 0;
+            position: fixed;
+            right: 0;
+            left: 0;
         }
     </style>
 </head>
@@ -120,10 +154,19 @@
             не comme il faut, – так что для читателей это всего лишь моё личное мнение; и, в-третьих, я не 
             раз пользовался Википедией – что, очевидно, не есть научная рецензируемая литература.
         </div>
+
+        <p style="text-align: center;"><img src="https://kartinkin.net/uploads/posts/2022-12/1670303779_6-kartinkin-net-p-kartinki-chip-i-deil-vkontakte-7.jpg" width="600" height="300"></p>
+
+        <div class="text">Nooo</div>
+        <div class="min"></div>
+        <div class="medium"></div>
+
     </main>
 
     <footer class="podval">
+
         &copy; Анастасия Удодова, ФБИ-14, 2 курс, 2023
+
     </footer>
 </body>
 </html>
