@@ -21,6 +21,33 @@
             let author = 'Автор страницы:\nУдодова Анастасия Александровна';
             alert(author);
         }
+        function showRaz() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert('Разность ' + a + ' и ' + b + ' равна ' + result);   
+        }
+        function showProiz() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert('Произведение ' + a + ' и ' + b + ' равно ' + result);
+        }
+        function showDel() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert('Деление ' + a + ' на ' + b + ' равно ' + result); 
+        }
     </script>
     <style>
         .message {
@@ -46,6 +73,9 @@
         <label>Первое число: <input type="number" value="5154" id="numberA"><br></label>
         <label>Второе число: <input type="number" value="7891" id="numberB"><br></label>
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        <div class="message" onclick="showRaz()">Найти разность чисел</div>
+        <div class="message" onclick="showProiz()">Найти произведение чисел</div>
+        <div class="message" onclick="showDel()">Найти частное чисел</div>
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
