@@ -54,6 +54,32 @@
             output.style.backgroundColor = backColor;
             output.style.color = textColor;
         }
+
+        function Korzina () {
+            let inputG = document.getElementById ('numberG');
+            let inputB = document.getElementById ('numberB');
+            let inputK = document.getElementById ('numberK');
+            let inputM = document.getElementById ('numberM');
+
+            var priceG = 50;
+            var priceB = 70;
+            var priceK = 95;
+            var priceM = 65;
+
+            let G = parseInt(inputG.value);
+            let B = parseInt(inputB.value);
+            let K = parseInt(inputK.value);
+            let M = parseInt(inputM.value);
+
+            let Gr = G * priceG;
+            let Ba = B * priceB;
+            let Ki = K * priceK;
+            let Ma = M * priceM;
+
+            let resultat = Gr + Ba + Ki + Ma;
+            let output = document.getElementById ('resultat');
+            output.innerHTML = 'Общая цена: ' + resultat + ' руб.';
+        }
     </script>
     <style>
         .message {
@@ -92,9 +118,22 @@
             <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow')">
             <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime')">
             <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'white', 'green')">
-            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'lightblue', 'purple')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'lightpink', 'purple')">
         </div>
         <div id="output"></div>
+
+        <div style="border:solid; margin-left: 100px; margin-right: 300px; width: 350px; color: blue; border-radius: 10px; margin-top: 10px;">
+        <div style="margin-left: 50px; font-size: 20px; color: blue;"><b>Корзина товаров</b></div><br>
+
+        <label style="margin-left: 50px;">Груши(50р/шт):<div><input style="margin-left: 50px;" type="number" value="3" id="numberG"></div></label><br>
+        <label style="margin-left: 50px;">Бананы(70р/шт):<div><input style="margin-left: 50px;" type="number" value="5" id="numberB"></div></label><br>
+        <label style="margin-left: 50px;">Киви(95р/шт):<div><input style="margin-left: 50px;" type="number" value="2" id="numberK"></div></label><br>
+        <label style="margin-left: 50px;">Мандарины(65р/шт):<div><input style="margin-left: 50px;" type="number" value="8" id="numberM"></div></label><br>
+
+        <input style="margin-left: 50px;" type="button" value="Рассчитать" onclick="Korzina()">
+            <div style="margin-left: 50px;" id="resultat">Общая цена:</div>
+    </div>
+    
     </main>
 
     <footer onclick="showAuthor()">
