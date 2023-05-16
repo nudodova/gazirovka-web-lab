@@ -14,6 +14,18 @@
             width: 700px;
             color: maroon;
         }
+        .color {
+            border: 1px solid;
+            border-color: black;
+            border-radius: 3px 3px;
+            margin: auto;
+            padding: 10px; 
+            width: 25%;
+            background-color: yellow;
+            color: black;
+            text-align: center;
+            cursor: pointer;
+        }
     </style>
     <script>
         let number;
@@ -51,17 +63,45 @@
             startGame()
         }
         function pravila1() {
-            document.getElementById("show-rules-btn").style.display = "none";
-            document.getElementById("hide-rules-btn").style.display = "block";
+            document.getElementById("prvl2").style.display = "none";
+            document.getElementById("prvl1").style.display = "block";
 
             document.getElementById("rules").style.display = "block";
         }
         function pravila2() {
-            document.getElementById("show-rules-btn").style.display = "block";
-            document.getElementById("hide-rules-btn").style.display = "none";
+            document.getElementById("prvl2").style.display = "block";
+            document.getElementById("prvl1").style.display = "none";
 
             document.getElementById("rules").style.display = "none";
         }
+        function changeColor(div) {
+            if(div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'black';
+                document.getElementById('color-name').innerHTML = 'черный';
+                div.style.color = 'white';
+            }
+            else if (div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'blue';
+                document.getElementById('color-name').innerHTML = 'синий';
+                div.style.color = 'white';
+            }
+            else if (div.style.backgroundColor == 'blue') {
+                div.style.backgroundColor = 'white';
+                document.getElementById('color-name').innerHTML = 'белый';
+                div.style.color = 'black';
+                
+            }
+            else if (div.style.backgroundColor == 'white') {
+                div.style.backgroundColor = 'purple';
+                document.getElementById('color-name').innerHTML = 'фиолетовый';
+                div.style.color = 'black';
+            }
+            else {
+                div.style.backgroundColor = 'yellow';
+                document.getElementById('color-name').innerHTML = 'желтый';
+            }
+        }
+        let Move = false;
     </script>
 </head>
 <body>
@@ -101,8 +141,8 @@
 
         <div>
             <div class="game" >
-                <button id="show-rules-btn" onclick="pravila1()" style="margin: 10px; margin-bottom: 10px; margin-left: 10px;">Показать правила игры</button>
-                <button id="hide-rules-btn" onclick="pravila2()" style="display: none; margin: 10px; margin-bottom: 10px; margin-left: 10px;">Скрыть правила игры</button>
+                <button id="prvl2" onclick="pravila1()" style="margin: 10px; margin-bottom: 10px; margin-left: 10px;">Показать правила игры</button>
+                <button id="prvl1" onclick="pravila2()" style="display: none; margin: 10px; margin-bottom: 10px; margin-left: 10px;">Скрыть правила игры</button>
             
             <div id="rules" style="display: none;">
                 <h1 style="font-size: 20px; text-align: left; margin-left: 10px;">Правила игры</h1>
@@ -114,6 +154,11 @@
                     <li class="pravila">Для того чтобы сыграть еще раз, нажмите на соответсвующую кнопку.<div class=""></div></li>
                 </ol>
             </div>
+        </div>
+
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">желтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
         </div>
     </main>
 
