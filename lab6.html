@@ -50,6 +50,18 @@
             count = 0;
             startGame()
         }
+        function pravila1() {
+            document.getElementById("show-rules-btn").style.display = "none";
+            document.getElementById("hide-rules-btn").style.display = "block";
+
+            document.getElementById("rules").style.display = "block";
+        }
+        function pravila2() {
+            document.getElementById("show-rules-btn").style.display = "block";
+            document.getElementById("hide-rules-btn").style.display = "none";
+
+            document.getElementById("rules").style.display = "none";
+        }
     </script>
 </head>
 <body>
@@ -84,6 +96,23 @@
             </div>
             <div>
                 <button onclick="again()">Сыграть еще раз</button>
+            </div>
+        </div>
+
+        <div>
+            <div class="game" >
+                <button id="show-rules-btn" onclick="pravila1()" style="margin: 10px; margin-bottom: 10px; margin-left: 10px;">Показать правила игры</button>
+                <button id="hide-rules-btn" onclick="pravila2()" style="display: none; margin: 10px; margin-bottom: 10px; margin-left: 10px;">Скрыть правила игры</button>
+            
+            <div id="rules" style="display: none;">
+                <h1 style="font-size: 20px; text-align: left; margin-left: 10px;">Правила игры</h1>
+                <ol>
+                    <li class="pravila">Для того, чтобы начать игру нажмите кнопку "Сыграть в игру"."</li>
+                    <li class="pravila">Далее введите в окно для ввода число от 1 до 100.</li>
+                    <li class="pravila">После этого кликните по кнопке "Угадать", чтобы узнать результат игры.</li>
+                    <li class="pravila">Если вы угадали число, то на экране вам покажется поздравление. Если поздравления нет, то попробуйте снова.</li>
+                    <li class="pravila">Для того чтобы сыграть еще раз, нажмите на соответсвующую кнопку.<div class=""></div></li>
+                </ol>
             </div>
         </div>
     </main>
