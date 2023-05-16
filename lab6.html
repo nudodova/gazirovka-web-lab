@@ -26,6 +26,22 @@
             text-align: center;
             cursor: pointer;
         }
+        .dvig {
+            border: 0px solid;
+            border-radius: 20px;
+            padding: 20px; 
+            width: 150px;
+            height: 30px;
+            background-color: rgb(39, 214, 48);
+            color: black;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            transition: all 1s ease;
+            transform: rotate(0);
+            left: 10px;
+
+        }
     </style>
     <script>
         let number;
@@ -102,6 +118,18 @@
             }
         }
         let Move = false;
+        function moveBlock(dvig) {
+            if (Move == false){
+                dvig.style.left = '1150px';
+                dvig.style.transform = 'rotate(1turn)';
+                Move = true;
+            }
+            else{
+                dvig.style.left = '10px';
+                dvig.style.transform = 'rotate(7turn)';
+                Move=false;
+            }    
+        }
     </script>
 </head>
 <body>
@@ -159,6 +187,10 @@
         <div class="color" ondblclick="changeColor(this)">
             Цвет: <span id="color-name">желтый</span><br>
             Сделайте двойной щелчок, чтобы сменить.
+        </div>
+
+        <div class="dvig" onclick="moveBlock(this)">
+            Щелкни меня
         </div>
     </main>
 
