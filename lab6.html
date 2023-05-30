@@ -53,6 +53,20 @@
             text-align: center;
             cursor: pointer;
         }
+        .clothes{
+            margin-top: 10px;
+            border: 1px solid;
+            border-radius: 3px 3px;
+            color: cornflowerblue;
+            border-color: cornflowerblue;
+            width: 25%;
+            background-color: white;
+        }
+        #wear{
+            width: 150px;
+            height: auto;
+            margin-top: 10px;
+        }
     </style>
     <script>
         let number;
@@ -151,6 +165,33 @@
             }
             block.style.width = width + 'px'
         }
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if(color == 'Красный' && type == 'Футболка') {
+                wear.src = 'https://ulrid.ru/image/cache/catalog/8c9b044b44c311e980f90050569b1703_15dae130458e11e980f90050569b1703-1000x1000.jpg';
+            } else if (color == 'Белый' && type == 'Футболка') {
+                wear.src = 'http://sc01.alicdn.com/kf/HTB1sP_PuFGWBuNjy0Fbq6z4sXXa1/wholesale-plain-white-100-cotton-t-shirts.jpg';
+            } else if (color == 'Черный' && type == 'Футболка') {
+                wear.src = 'https://ae04.alicdn.com/kf/H24f1ce92db214b9189c99c9b480e1630K.jpg';
+            } else if (color == 'Красный' && type == 'Поло') {
+                wear.src = 'https://7gifts.ru/upload/iblock/956/956d0cf47f1248f2af5d90fe16edf9aa.jpg';
+            } else if (color == 'Белый' && type == 'Поло') {
+                wear.src = 'https://1souvenir.ru/d/3000/d/fcfe1f2f-0579-11ec-957e-00155da68a11.jpg';
+            } else if (color == 'Черный' && type == 'Поло') {
+                wear.src = 'https://adventurica.ru/media/product/54238/54238_1.jpg';
+            } else if (color == 'Красный' && type == 'Майка') {
+                wear.src = 'https://loloclo.ru/upload/iblock/75e/75ed59c1860e5836bb3b83c2092ac11e.jpg';
+            } else if (color == 'Белый' && type == 'Майка') {
+                wear.src = 'https://loloclo.ru/upload/iblock/222/22225d84b1597bba82765b0b6f8e0712.jpg';
+            } else if (color == 'Черный' && type == 'Майка') {
+                wear.src = 'https://ivangelo.ru/upload/iblock/033/033d578b812b969b80427139f116e466.jpg';
+            } else {
+                wear.src = '';
+            }
+        }   
     </script>
 </head>
 <body>
@@ -215,7 +256,27 @@
         </div>
 
         <div class="bigger" onclick="resizeBlock()">
-            Расширь меня 
+            Щелкни меня 
+        </div>
+
+        <div class='clothes'>
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Черный</option>
+            </select><br>
+
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+
+            <button onclick="filter()">ОК</button>
+
+            <img id="wear">
         </div>
     </main>
 
