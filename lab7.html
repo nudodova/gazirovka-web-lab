@@ -83,6 +83,21 @@
                 circlesDiv.appendChild(circle);
             }
         }
+        function createMultiplicationTable() {
+            let tableDiv = document.getElementById('table');
+            tableDiv.innerHTML = '';
+            let table = document.createElement('table');
+            for (let i = 13; i <= 33; i++) {
+                let row = document.createElement('tr');
+                for (let j = 18; j == 18; j++) {
+                    let cell = document.createElement('td');
+                    cell.textContent = `${i} x ${j} = ${i * j}`;
+                    row.appendChild(cell);
+                }
+            table.appendChild(row);
+            }
+        tableDiv.appendChild(table);
+        }
     </script>
 </head>
 <body>
@@ -104,6 +119,9 @@
         <input type="number" id="count" value="5" placeholder="Введите число кругов">
         <button onclick="createCircles()">Красное/зелёное</button>
         <div id="circles"></div>
+
+        <button onclick="createMultiplicationTable()">Таблица умножения</button>
+        <div id="table"></div>
     </main>
 
     <footer>
