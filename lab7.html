@@ -98,6 +98,53 @@
             }
         tableDiv.appendChild(table);
         }
+        let dates = ['17.05.2023', '18.05.2023', '19.05.2023', '22.05.2023', '23.05.2023', '24.05.2023', '25.05.2023', '26.05.2023', '29.05.2023'];
+        let prices = [1291.6, 1280.0, 1264.0, 1264.4, 1289.6, 1310.0, 1299.0, 1304.8, 1310.0];
+
+    function createStockTable() {
+      let tableDiv = document.getElementById('table');
+      tableDiv.innerHTML = '';
+      let table = document.createElement('table');
+      let headerRow = document.createElement('tr');
+      let dateHeader = document.createElement('th');
+      dateHeader.textContent = 'Дата';
+      headerRow.appendChild(dateHeader);
+      let priceHeader = document.createElement('th');
+      priceHeader.textContent = 'Цена акций';
+      headerRow.appendChild(priceHeader);
+      let diffHeader = document.createElement('th');
+      diffHeader.textContent = 'Разница';
+      headerRow.appendChild(diffHeader);
+      table.appendChild(headerRow);
+
+      let prevPrice = null;
+      for (let i = 0; i < dates.length; i++) {
+        let row = document.createElement('tr');
+        let dateCell = document.createElement('td');
+        dateCell.textContent = dates[i];
+        row.appendChild(dateCell);
+        let priceCell = document.createElement('td');
+        priceCell.textContent = prices[i];
+        row.appendChild(priceCell);
+        let diffCell = document.createElement('td');
+        if (prevPrice !== null) {
+          diffCell.textContent = prices[i] - prevPrice;
+        }
+        row.appendChild(diffCell);
+        table.appendChild(row);
+        prevPrice = prices[i];
+      }
+
+      tableDiv.appendChild(table);
+
+      let statsDiv = document.getElementById('stats');
+      let avgPrice = prices.reduce((sum, price) => sum + price, 0) / prices.length;
+      statsDiv.innerHTML = `Среднее значение стоимости акции: ${avgPrice.toFixed(2)}<br>`;
+      let maxPrice = Math.max(...prices);
+      statsDiv.innerHTML += `Максимальное значение стоимости акции: ${maxPrice}<br>`;
+      let minPrice = Math.min(...prices);
+      statsDiv.innerHTML += `Минимальное значение стоимости акции: ${minPrice}<br>`;
+    }
     </script>
 </head>
 <body>
@@ -122,6 +169,10 @@
 
         <button onclick="createMultiplicationTable()">Таблица умножения</button>
         <div id="table"></div>
+
+        <button onclick="createStockTable()">Курс акций НОВАТЭК</button>
+        <div id="table"></div>
+        <div id="stats"></div>
     </main>
 
     <footer>
