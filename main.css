@@ -21,12 +21,22 @@ header:hover {
     color:darkgreen;
 }
 
+.wrapper {
+
+    padding-bottom : 50px;
+    
+}
+
 footer {
     background-image: linear-gradient(to right bottom, red, orange, yellow, green, blue, darkblue, purple);
     color: lightgreen;
     padding: 10px;
     font-size: 12pt;
     text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 footer:hover {
