@@ -6,6 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Удодова Анастасия Александровна. Лабораторная 7</title>
     <link rel="stylesheet" href="main.css">
+    <style>
+        .circle {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 24px;
+          font-weight: bold;
+          color: white;
+        }
+        .red {
+          background-color: red;
+        }
+        .green {
+          background-color: green;
+        }
+      </style>
     <script>
         function addBlocks() {
             let blocks = document.getElementById('blocks');
@@ -48,7 +67,22 @@
                 document.body.appendChild(block1);
             }
         }
-
+        function createCircles() {
+            const count = document.getElementById('count').value || 5;
+            const circlesDiv = document.getElementById('circles');
+            circlesDiv.innerHTML = '';
+            for (let i = count; i > 0; i--) {
+                let circle = document.createElement('div');
+                circle.classList.add('circle');
+                circle.textContent = i;
+                if (i % 2 === 0) {
+                circle.classList.add('green');
+                } else {
+                circle.classList.add('red');
+                }
+                circlesDiv.appendChild(circle);
+            }
+        }
     </script>
 </head>
 <body>
@@ -66,6 +100,10 @@
 
         <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button>
         <div id="transparent-blocks"></div>
+
+        <input type="number" id="count" value="5" placeholder="Введите число кругов">
+        <button onclick="createCircles()">Красное/зелёное</button>
+        <div id="circles"></div>
     </main>
 
     <footer>
