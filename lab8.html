@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Удодова Анастасия Александровна. Лабораторная 8</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="lab8.js"></script>
+    <style>
+        .time {
+            color:darkviolet;
+            font-size: 24px;
+            margin: 5px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding: auto;
+            border: 3px solid;
+            width: 800px;
+            padding: 5px;
+            border-radius: 20px;
+        
+        
+        }
+        
+        .clock1 {
+            text-align: right;
+            color: rebeccapurple;
+            font-size: 20px;
+            margin: 5px;
+        
+        }
+        </style>
+        </head>
+        
+        <body onload="showDate()">
+        <header>
+        НГТУ, ФБ, Лабораторная работа 8
+            <div class="clock1" id="clock" >00:00:00</div>
+        </header>
+        
+        <main>
+            <div class="time">
+                <div id="current-date"></div>
+                <div id="current-date1"></div>
+                <div id="current-date2"></div>
+                <div id="current-date3"></div>
+                <div id="current-date4"></div>
+                <div id="current-date5"></div>
+            </div>
+        
+            <div>
+                <label>Дата рождения: <input type="date"></label>
+            </div>
+            <div>
+                <button onclick="showDaysCount()">Показать число дней</button>
+                <div id="days"></div>
+            </div>
+            <div>
+                <button onclick="Clear()">Очистить после ввода</button>
+            </div>
+            
+        </main>
+        
+        
+        <footer>
+        &copy; Анастасия Удодова, ФБИ-14, 2 курс, 2023
+        </footer>
+        </body>
+        </html>
